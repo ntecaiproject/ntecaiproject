@@ -103,7 +103,7 @@ if __name__ == '__main__':
         print('valid')
         if st.button('start detecting'):
 
-            #detect(opt)
+            detect(opt)
 
             if source_index == 0:
                 with st.spinner(text='Preparing Images'):
