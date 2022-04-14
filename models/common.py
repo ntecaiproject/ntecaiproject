@@ -1,6 +1,8 @@
 # YOLOv5 common modules
 
 import math
+import warnings
+
 from copy import copy
 from pathlib import Path
 
@@ -385,7 +387,6 @@ class Classify(nn.Module):
         z = torch.cat([self.aap(y) for y in (x if isinstance(x, list) else [x])], 1)  # cat if list
         return self.flat(self.conv(z))  # flatten to x(b,c2)
     
-    import warnings
 
 class SPPF(nn.Module):
     # Spatial Pyramid Pooling - Fast (SPPF) layer for YOLOv5 by Glenn Jocher
