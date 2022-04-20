@@ -2,31 +2,31 @@
 
 Deploy [YOLOv5](https://github.com/ultralytics/yolov5/releases/tag/v5.0) detection with [Streamlit](https://github.com/streamlit/streamlit)
 
-博文地址： <https://xugaoxiang.com/2021/08/27/yolov5-streamlit/>
+reference： <https://xugaoxiang.com/2021/08/27/yolov5-streamlit/>
 
-# 线上体验
+# Image Recognition Application
 
-直接访问 <https://share.streamlit.io/ntecai/testing1/main/main.py>
+Visit <https://share.streamlit.io/ntecai/testing1/main/main.py>
 
-# 安装依赖
+# I
 
 ```
-# 本地安装的话，请将opencv-python-headless改为opencv-python
+# 本地安装的话，請將opencv-python-headless改為opencv-python
 pip install -r requirements.txt
 ```
 
-如果有`GPU`的话，将`torch`替换成`gpu`版本可加速检测
+如果有`GPU`的話，將`torch`替換成`gpu`版本可加速來檢測
 
-# 运行项目
+# Run the application
 
 ```
 streamlit run main.py
 ```
 
-**图片检测**
+**Image Detection**
 
 ![streamlit yolov5 image detection](data/images/image.png)
 
-**视频检测**
+**Video Detection**
 
 ![streamlit yolov5 video detection](data/images/video.png)
