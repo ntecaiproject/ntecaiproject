@@ -11,7 +11,7 @@ Visit <https://share.streamlit.io/ntecai/testing1/main/main.py>
 # Installation
 
 ```
-# 本地安装的话，請將opencv-python-headless改為opencv-python
+# 本地安裝的话，請將opencv-python-headless改為opencv-python
 pip install -r requirements.txt
 ```
 
