@@ -6,7 +6,7 @@ reference： <https://xugaoxiang.com/2021/08/27/yolov5-streamlit/>
 
 # Image Recognition Application
 
-Visit <https://share.streamlit.io/ntecai/testing1/main/main.py>
+Visit <https://share.streamlit.io/ntecaiproject/ntecaiproject/main/main.py>
 
 # Installation
 
