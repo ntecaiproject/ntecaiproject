@@ -30,15 +30,13 @@ def get_detection_folder():
 
 if __name__ == '__main__':
 
-    st.title('Trichuris Trichiura - YOLOv5 Streamlit App')
+    st.title('YOLOv5 Streamlit App')
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str,
-                        default='weights/yolov5s.pt', help='model.pt path(s)')
-    #parser.add_argument('--weights', nargs='+', type=str,
-    #                    default='weights/trichuris-trichiura.pt', help='model.pt path(s)')
+                        default='weights/best.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str,
-                        default='data/images', help='source')
+                        default='diagnosis-intestinal-parasites-3/test/images', help='source')
     parser.add_argument('--img-size', type=int, default=640,
                         help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float,
@@ -72,16 +70,16 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt)
 
-    source = ("Image Detection", "Video Detection")
-    source_index = st.sidebar.selectbox("Choose the input", range(
+    source = ("Image detection", "Video detection")
+    source_index = st.sidebar.selectbox("Choose the detection", range(
         len(source)), format_func=lambda x: source[x])
 
     if source_index == 0:
         uploaded_file = st.sidebar.file_uploader(
-            "Upload Image", type=['png', 'jpeg', 'jpg'])
+            "Upload image", type=['png', 'jpeg', 'jpg'])
         if uploaded_file is not None:
             is_valid = True
-            with st.spinner(text='Loading...'):
+            with st.spinner(text='Loading resources...'):
                 st.sidebar.image(uploaded_file)
                 picture = Image.open(uploaded_file)
                 picture = picture.save(f'data/images/{uploaded_file.name}')
@@ -89,10 +87,10 @@ if __name__ == '__main__':
         else:
             is_valid = False
     else:
-        uploaded_file = st.sidebar.file_uploader("Upload Video", type=['mp4'])
+        uploaded_file = st.sidebar.file_uploader("Upload video", type=['mp4'])
         if uploaded_file is not None:
             is_valid = True
-            with st.spinner(text='Loading...'):
+            with st.spinner(text='loading resources...'):
                 st.sidebar.video(uploaded_file)
                 with open(os.path.join("data", "videos", uploaded_file.name), "wb") as f:
                     f.write(uploaded_file.getbuffer())
@@ -102,7 +100,7 @@ if __name__ == '__main__':
 
     if is_valid:
         print('valid')
-        if st.button('start detecting'):
+        if st.button('start detection'):
 
             detect(opt)
 
