@@ -30,8 +30,7 @@ def get_detection_folder():
 
 if __name__ == '__main__':
 
-    st.title('Image Detection for Diagnosis of Ova and Cysts in Stool 
-             (detect Trichuris Trichiura)')
+    st.title('Image Detection for Diagnosis of Ova and Cysts in Stool (detect Trichuris Trichiura)')
     st.image('https://github.com/ntecaiproject/ntecaiproject/blob/main/tt.JPG')
 
     parser = argparse.ArgumentParser()
